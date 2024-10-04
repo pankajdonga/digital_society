@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--begin::Head-->
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>AdminLTE v4 | Dashboard</title>
+    <!--begin::Primary Meta Tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="AdminLTE v4 | Dashboard" />
+    <meta name="author" content="ColorlibHQ" />
+    <meta
+      name="description"
+      content="AdminLTE is a Free Bootstrap 5 Admin Dashboard, 30 example pages using Vanilla JS."
+    />
+    <meta
+      name="keywords"
+      content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, colorlibhq, colorlibhq dashboard, colorlibhq admin dashboard"
+    />
+
+    <link rel="stylesheet" href="/static/index/css/invoice.css" />
+    <!--end::Required Plugin(AdminLTE)-->
+  </head>
+
+  <body style="font-size: 16px">
+    <div>
+      <!--begin::Container-->
+      <div class="invoice-box">
+        <table
+          cellpadding="0"
+          cellspacing="0"
+          style="width: 100%; text-align: left"
+        >
+          <tr class="top">
+            <td colspan="2">
+              <table style="padding-bottom: 20px">
+                <tr>
+                  <td>
+                    {% for i in logo %}
+                    <img
+                      src="{{i.logo.path}}"
+                      style="width: 40%; max-width: 300px"
+                    />
+                    {% endfor %}
+                  </td>
+
+                  <td style="padding-left: 40px">
+                    Address : {{user.address}}<br />
+                    Email : {{user.email}}<br />
+                    Phone : {{user.mobile}}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr class="information">
+            <td colspan="2">
+              <table>
+                <tr>
+                  <td>
+                    <span style="font-weight: bold; font-size: 1.5rem"
+                      >| Bill To :{{data.member_name}}</span
+                    ><br />
+                    {{user.address}}<br />
+                    <br />
+                  </td>
+                  <td style="padding-left: 40px">
+                    Invoice #: {{data.inv}}<br />
+                    Date : {{data.created_at}}<br />
+                    Status : Unpaid
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr class="details">
+            <td style="font-size: 1rem; font-weight: bold">Invoice Entries</td>
+          </tr>
+        </table>
+        <div style="max-width: 800px">
+          <table>
+            <tr
+              style="
+                background: #eee;
+                border-bottom: 1px solid #ddd;
+                font-weight: bold;
+                width: 100%;
+                padding-top: 5px;
+              "
+            >
+              <td style="text-align: center">No.</td>
+              <td style="text-align: center">DATE</td>
+              <td style="text-align: center">ENTRY</td>
+              <td style="text-align: center">AMOUNT</td>
+            </tr>
+
+            <tr style="padding-top: 5px">
+              <td style="text-align: center">1</td>
+              <td style="text-align: center">{{data.created_at}}</td>
+              <td style="text-align: center">{{data.charges_type}}</td>
+              <td style="text-align: center">{{data.amount}}</td>
+            </tr>
+
+            <tr class="total" style="padding-top: 5px">
+              <td></td>
+              <td style="border: 0"></td>
+              <td></td>
+              <td
+                style="
+                  padding-left: 40px;
+                  border-top: 1px solid rgb(238, 238, 238);
+                "
+              >
+                Total: {{data.amount}}
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!--end::Container-->
+    </div>
+    <!-- <table style="width: 100%; text-align: center; border-collapse: collapse">
+      <tr style="background-color: antiquewhite; padding-top: 5px">
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+        <th>D</th>
+      </tr>
+      <tr style="padding-top: 5px">
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+    </table> -->
+  </body>
+  <!--end::Body-->
+</html>
